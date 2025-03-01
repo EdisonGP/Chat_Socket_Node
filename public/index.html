@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Socket.IO Chat</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary-color: #4F46E5;
+      --primary-light: #EEF2FF;
+      --secondary-color: #6B7280;
+      --light-gray: #F3F4F6;
+      --dark-gray: #1F2937;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, var(--primary-color), #6366F1);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login.page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 2.5rem;
+      width: 400px;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .login-card img {
+      width: 80px;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-title {
+      color: var(--dark-gray);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .usernameInput {
+      border: 2px solid var(--light-gray);
+      border-radius: 8px;
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      width: 100%;
+      transition: all 0.3s;
+    }
+
+    .usernameInput:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px var(--primary-light);
+      outline: none;
+    }
+
+    .btn-join {
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .btn-join:hover {
+      background-color: #3730A3;
+    }
+  </style>
+</head>
+<body>
+  <div class="login page">
+    <div class="login-card">
+      <img src="https://cdn.pixabay.com/photo/2012/04/15/21/17/speech-35342_1280.png" alt="Chat Logo" />
+      <h3 class="login-title">Join the Conversation</h3>
+      <div class="mb-3">
+        <input id="usernameInput" class="usernameInput" type="text" maxlength="14" placeholder="Ingresa un Nombre" id="usernameInput" />
+      </div>
+      <button class="btn-join" id="btnLogin">
+        <i class="fas fa-sign-in-alt me-2"></i>Join Chat
+      </button>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
